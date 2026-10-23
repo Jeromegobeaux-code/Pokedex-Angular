@@ -4,9 +4,10 @@ import { inject, Injectable } from '@angular/core';
 import { PokeData } from '../../services/poke-data';
 import {PkmPreviewDto} from '../../models/pkm-preview-dto';
 import { AsyncPipe, DecimalPipe, TitleCasePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [AsyncPipe, TitleCasePipe, DecimalPipe],
+  imports: [AsyncPipe, TitleCasePipe, DecimalPipe, RouterLink],
   selector: 'app-home',
   styleUrl: './home.css',
   templateUrl: './home.html',
@@ -15,4 +16,5 @@ export class Home {
   private pokemonService = inject(PokeData);
 
   liste$ = this.pokemonService.getFirstGeneration();
+
 }

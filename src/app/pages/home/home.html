@@ -2,19 +2,20 @@
   @if (liste$ | async; as pokemons) {
   @for(pokemon of pokemons; track pokemon.id)
   {
-    <div class="pkmCard">
-      <p class="numero">n°{{pokemon.id | number:'3.0-0'}}</p>
-
-      <img [src]="pokemon.sprites.other['official-artwork'].front_default"
-           [alt]="pokemon.name">
-      <p class="name">{{pokemon.name | titlecase}}</p>
-
+    <a [routerLink]="['/infos', pokemon.id]">
+      <div class="pkmCard">
+        <p class="numero">n°{{pokemon.id | number:'3.0-0'}}</p>
+        <img class="picture"[src]="pokemon.sprites.other['official-artwork'].front_default"
+             [alt]="pokemon.name">
+        <p class="name">{{pokemon.name | titlecase}}</p>
         <div class="types">
-        @for (t of pokemon.types; track t.slot) {
-          <span class="type">{{ t.type.name }}</span>
-        }
+          @for (t of pokemon.types; track t.slot) {
+            <span class="type">{{ t.type.name }}</span>
+          }
+        </div>
       </div>
-    </div>
+    </a>
+
   }
   }
   @else

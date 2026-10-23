@@ -1,3 +1,5 @@
+import { EffectEntries } from './effect-entries';
+
 export interface PkmDto {
   id: number;
   name: string;
@@ -10,4 +12,5 @@ export interface PkmDto {
   };
   weight: number;
   height: number;
+  EffectEntries: EffectEntries;
 }

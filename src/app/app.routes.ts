@@ -7,5 +7,5 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   { path: 'home', loadComponent: () => import('./pages/home/home').then((m) => m.Home) },
-  { path: 'infos', loadComponent: () => import('./pages/infos/infos').then((m) => m.Infos) },
+  { path: 'infos/:id', loadComponent: () => import('./pages/infos/infos').then((m) => m.Infos) },
 ];

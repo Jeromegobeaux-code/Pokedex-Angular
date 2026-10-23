@@ -2,6 +2,13 @@
 {
   display: block;
 }
+
+a
+{
+  text-decoration: none;
+  color: inherit;
+}
+
 main
 {
   padding:2rem;
@@ -10,6 +17,8 @@ main
   text-align: justify;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
 }
 .pkmCard
@@ -27,7 +36,7 @@ main
   flex-wrap: wrap;
   margin: 1rem;
 }
-.pkmCard>img
+.picture
 {
   width: 200px;
 }
@@ -44,4 +53,8 @@ main
 .pkmCard:hover
 {
   background-color: lightgray;
+}
+.pkmBG
+{
+  background-image: url(/public/CardBG.png);
 }

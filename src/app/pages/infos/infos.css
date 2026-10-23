@@ -1,0 +1,53 @@
+main
+{
+  padding:2rem;
+  max-width: 1200px;
+  margin-inline: auto;
+  text-align: justify;;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+main > div, main>article
+{
+  background-color: dimgray;
+  width: 40%;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  height: 70vh;
+}
+article
+{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+article > menu
+{
+  align-self: flex-end;
+}
+button
+{
+  padding: 0.5rem 1rem;
+}
+h2
+{
+  width: 100%;
+  text-align: center;
+}
+#leftCard
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.type
+{
+  padding: 0.5rem;
+  background-color: dimgray;
+}
+img
+{
+  padding: 0.5rem;
+}

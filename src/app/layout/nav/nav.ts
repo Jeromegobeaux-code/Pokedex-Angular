@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  imports: [],
+  imports: [NgOptimizedImage, RouterLink],
   selector: 'app-nav',
   styleUrl: './nav.css',
   templateUrl: './nav.html',

@@ -1,1 +1,46 @@
-<p>infos works!</p>
+<main>
+  @if (pokemon | async; as pokemon) {
+  <div id="leftCard">
+    <h2>#{{pokemon.id | number:'3.0-0'}} {{pokemon.name | titlecase}}</h2>
+    <img [src]="pokemon.sprites.other['official-artwork'].front_default" alt="" width="350px">
+    @for (t of pokemon.types; track t.slot) {
+      <span class="type">{{ t.type.name }}</span>
+    }
+    <br>
+    <span>Weight: {{pokemon.weight}}Kg</span><span>Height:{{pokemon.height}}m</span>
+    <h3>Talent</h3>
+    <p></p>
+  </div>
+  <article>
+    @switch (Content)
+    {
+      @case ("Description")
+      {
+        <app-pokemon-description></app-pokemon-description>
+      }
+      @case ("Evolution")
+      {
+        <app-pokemon-evolutions></app-pokemon-evolutions>
+      }
+      @case ("Stats")
+      {
+        <app-pokemon-stats></app-pokemon-stats>
+      }
+      @case ("Capacities")
+      {
+        <app-pokemon-capacities></app-pokemon-capacities>
+      }
+    }
+
+  <menu>
+    <button (click)="ToDescription()">Description</button>
+    <button (click)="ToStats()">Stats</button>
+    <button (click)="ToCapacities()">Capacities</button>
+    <button (click)="ToEvolution()">Evolutions</button>
+  </menu>
+  </article>
+  } @else {
+    <p>Pokemon not found</p>
+  }
+</main>
+
